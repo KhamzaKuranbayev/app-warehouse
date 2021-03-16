@@ -1,4 +1,4 @@
-package uz.pdp.appwarehouse.dtos.response;
+package uz.pdp.appwarehouse.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductInfo {
+public class DailyTotal {
 
-    private String productName;
-    private Double amount;
+    private String totalAmount;
+    private String totalPrice;
 
 }

@@ -3,6 +3,7 @@ package uz.pdp.appwarehouse.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import uz.pdp.appwarehouse.constants.ExpireStatus;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -30,5 +31,9 @@ public class InputProduct {
 
     @ManyToOne
     private Input input;
+
+    @Column(name = "expire_status")
+    @Enumerated(EnumType.ORDINAL)
+    private ExpireStatus expireStatus;
 
 }

@@ -1,15 +1,13 @@
 package uz.pdp.appwarehouse.service;
 
 import org.springframework.stereotype.Service;
-import uz.pdp.appwarehouse.dtos.response.ResponseProducts;
-
-import java.sql.Timestamp;
+import uz.pdp.appwarehouse.dtos.DailyTotal;
 
 @Service
 public interface DashboardService {
 
-     ResponseProducts getAllInputProductsByDate(Timestamp date);
+     DailyTotal inputProducts();
 
-     ResponseProducts getAllOutputProductsByDate(Timestamp date);
+     DailyTotal outputProducts();
 
 }

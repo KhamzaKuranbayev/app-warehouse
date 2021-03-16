@@ -2,12 +2,9 @@ package uz.pdp.appwarehouse.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import uz.pdp.appwarehouse.dtos.response.ResponseProducts;
+import uz.pdp.appwarehouse.dtos.DailyTotal;
 import uz.pdp.appwarehouse.service.DashboardService;
-
-import java.sql.Timestamp;
 
 @RestController
 @RequestMapping("/dashboard")
@@ -20,15 +17,15 @@ public class DashboardController {
     }
 
     // Kunlik kirim bo’lgan mahsulotlar (qiymati, umumiy summasi)
-    @GetMapping
-    public ResponseProducts getInputProductsByDate(@RequestParam("date") Timestamp date){
-        return dashboardService.getAllInputProductsByDate(date);
+    @GetMapping("/input")
+    public DailyTotal getInputProductsByDate() {
+        return dashboardService.inputProducts();
     }
 
     // Kunlik eng ko’p chiqim qilingan mahsulotlar
-    /*@GetMapping
-    public ResponseProducts getOutputProductsByDate(@RequestParam("date") Timestamp date){
-
-    }*/
+    @GetMapping
+    public DailyTotal getOutputProductsByDate(){
+        return dashboardService.outputProducts();
+    }
 
 }

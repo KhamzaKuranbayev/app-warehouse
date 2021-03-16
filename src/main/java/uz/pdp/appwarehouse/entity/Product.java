@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import uz.pdp.appwarehouse.constants.ExpireStatus;
 import uz.pdp.appwarehouse.entity.template.AbstractEntity;
 
 import javax.persistence.*;
@@ -25,4 +26,5 @@ public class Product extends AbstractEntity {
     private Measurement measurement;
 
     private String code;
+
 }
